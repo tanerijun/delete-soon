@@ -1,0 +1,8 @@
+name = "citrus-tube"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "citrus-tube"
+database_id = "f2ce4fdb-b5ce-4b0b-bac4-57b261b252cd"
+preview_database_id = "DB"
+migrations_dir = "drizzle/migrations"

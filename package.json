@@ -1,37 +1,41 @@
 {
-  "name": "remix-on-pages",
-  "private": true,
-  "sideEffects": false,
-  "type": "module",
-  "scripts": {
-    "build": "remix build",
-    "dev": "remix dev --manual -c \"npm run start\"",
-    "start": "wrangler pages dev --compatibility-date=2023-06-21 ./public",
-    "typecheck": "tsc"
-  },
-  "dependencies": {
-    "@remix-run/cloudflare": "^2.0.0",
-    "@remix-run/cloudflare-pages": "^2.0.0",
-    "@remix-run/css-bundle": "^2.0.0",
-    "@remix-run/react": "^2.0.0",
-    "isbot": "^3.6.8",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "devDependencies": {
-    "@cloudflare/workers-types": "^4.20230518.0",
-    "@remix-run/dev": "^2.0.0",
-    "@remix-run/eslint-config": "^2.0.0",
-    "@types/react": "^18.2.20",
-    "@types/react-dom": "^18.2.7",
-    "eslint": "^8.38.0",
-    "prettier": "^3.0.3",
-    "prettier-plugin-tailwindcss": "^0.5.4",
-    "tailwindcss": "^3.3.3",
-    "typescript": "^5.1.0",
-    "wrangler": "^3.1.1"
-  },
-  "engines": {
-    "node": ">=18.0.0"
-  }
+	"name": "remix-on-pages",
+	"private": true,
+	"sideEffects": false,
+	"type": "module",
+	"scripts": {
+		"build": "remix build",
+		"dev": "remix dev --manual -c \"npm run start\"",
+		"start": "wrangler pages dev --compatibility-date=2023-06-21 ./public",
+		"typecheck": "tsc",
+		"migrate:local": "wrangler d1 migrations apply citrus-tube --local",
+		"migrate:remote": "wrangler d1 migrations apply citrus-tube"
+	},
+	"dependencies": {
+		"@remix-run/cloudflare": "^2.0.0",
+		"@remix-run/cloudflare-pages": "^2.0.0",
+		"@remix-run/css-bundle": "^2.0.0",
+		"@remix-run/react": "^2.0.0",
+		"drizzle-orm": "^0.28.6",
+		"isbot": "^3.6.8",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
+	},
+	"devDependencies": {
+		"@cloudflare/workers-types": "^4.20230518.0",
+		"@remix-run/dev": "^2.0.0",
+		"@remix-run/eslint-config": "^2.0.0",
+		"@types/react": "^18.2.20",
+		"@types/react-dom": "^18.2.7",
+		"drizzle-kit": "^0.19.13",
+		"eslint": "^8.38.0",
+		"prettier": "^3.0.3",
+		"prettier-plugin-tailwindcss": "^0.5.4",
+		"tailwindcss": "^3.3.3",
+		"typescript": "^5.1.0",
+		"wrangler": "^3.1.1"
+	},
+	"engines": {
+		"node": ">=18.0.0"
+	}
 }

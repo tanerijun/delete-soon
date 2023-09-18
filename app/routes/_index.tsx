@@ -1,7 +1,23 @@
-import type { MetaFunction } from "@remix-run/cloudflare"
+import type { LoaderFunctionArgs, MetaFunction } from "@remix-run/cloudflare"
+import { getDb } from "~/lib/db.server"
 
 export const meta: MetaFunction = () => {
-	return [{ title: "New Remix App" }, { name: "description", content: "Welcome to Remix!" }]
+	return [
+		{ title: "CitrusTube" },
+		{
+			name: "description",
+			content: "A citrus-flavored video sharing platform inspired by Youtube",
+		},
+	]
+}
+
+export const loader = async ({ request, context }: LoaderFunctionArgs) => {
+	console.log("hello from loader")
+	const db = getDb(context)
+	const user = await db.query.user.findFirst()
+	console.log(user)
+
+	return null
 }
 
 export default function Index() {

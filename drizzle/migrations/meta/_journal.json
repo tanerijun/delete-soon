@@ -1,0 +1,13 @@
+{
+  "version": "5",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1695019474880,
+      "tag": "0000_broken_king_bedlam",
+      "breakpoints": true
+    }
+  ]
+}
