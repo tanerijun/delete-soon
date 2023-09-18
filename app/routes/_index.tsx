@@ -12,10 +12,11 @@ export const meta: MetaFunction = () => {
 }
 
 export const loader = async ({ request, context }: LoaderFunctionArgs) => {
-	console.log("hello from loader")
-	const db = getDb(context)
-	const user = await db.query.user.findFirst()
-	console.log(user)
+	// console.log("hello from loader")
+	// const db = getDb(context)
+	// const user = await db.query.user.findFirst()
+	// console.log(user)
+	// console.log(process.env.NODE_ENV)
 
 	return null
 }

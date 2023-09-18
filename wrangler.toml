@@ -1,5 +1,8 @@
 name = "citrus-tube"
 
+[env.dev]
+name="devdev"
+
 [[d1_databases]]
 binding = "DB"
 database_name = "citrus-tube"
